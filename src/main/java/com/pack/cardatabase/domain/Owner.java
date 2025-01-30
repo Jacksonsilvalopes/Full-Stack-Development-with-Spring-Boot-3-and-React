@@ -2,7 +2,9 @@ package com.pack.cardatabase.domain;
 
 import jakarta.persistence.*;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Owner {
@@ -13,6 +15,21 @@ public class Owner {
     @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
     private List<Car> carList;
 
+ /*
+
+    @ManyToMany(cascade = CascadeType.PERSIST)
+    @JoinTable(name = "car_owner", joinColumns =  { @JoinColumn(name = "ownerid")}, inverseJoinColumns = {  @JoinColumn(name = "id")} )
+
+    private Set<Car> cars = new HashSet<Car>();
+
+    public Set<Car> getCars() {
+        return cars;
+    }
+
+    public void setCars(Set<Car> cars) {
+        this.cars = cars;
+    }
+*/
     public Owner() {
 
     }
@@ -35,7 +52,6 @@ public class Owner {
     public Long getOwnerid() {
         return ownerid;
     }
-
 
 
     public String getFirstname() {

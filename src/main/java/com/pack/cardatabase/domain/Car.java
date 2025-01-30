@@ -3,7 +3,9 @@ package com.pack.cardatabase.domain;
 
 import jakarta.persistence.*;
 
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 public class Car {
@@ -16,6 +18,21 @@ public class Car {
     @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name = "owner")
     private Owner owner;
+
+
+  /*
+
+  @ManyToMany(mappedBy = "cars")
+    private Set<Owner> owners = new HashSet<Owner>();
+
+    public Set<Owner> getOwners() {
+        return owners;
+    }
+
+    public void setOwners(Set<Owner> owners) {
+        this.owners = owners;
+    }
+*/
 
 
     public Car() {
