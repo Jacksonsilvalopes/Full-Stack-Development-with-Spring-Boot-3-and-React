@@ -15,25 +15,9 @@ public class Car {
     private Long id;
     private String brand, model, color, registrationNumber;
     private int modelYear, prince;
-    @ManyToOne(fetch=FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "owner")
     private Owner owner;
-
-
-  /*
-
-  @ManyToMany(mappedBy = "cars")
-    private Set<Owner> owners = new HashSet<Owner>();
-
-    public Set<Owner> getOwners() {
-        return owners;
-    }
-
-    public void setOwners(Set<Owner> owners) {
-        this.owners = owners;
-    }
-*/
-
 
     public Car() {
     }
