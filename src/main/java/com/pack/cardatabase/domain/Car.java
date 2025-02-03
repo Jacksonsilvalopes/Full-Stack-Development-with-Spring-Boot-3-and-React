@@ -50,7 +50,7 @@ public class Car {
         this.id = id;
     }
 
-    public String getbrand() {
+    public String getBrand() {
         return brand;
     }
 
@@ -102,12 +102,12 @@ public class Car {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Car car)) return false;
-        return getModelYear() == car.getModelYear() && getPrince() == car.getPrince() && Objects.equals(getId(), car.getId()) && Objects.equals(getbrand(), car.getbrand()) && Objects.equals(getModel(), car.getModel()) && Objects.equals(getColor(), car.getColor()) && Objects.equals(getRegistrationNumber(), car.getRegistrationNumber());
+        return getModelYear() == car.getModelYear() && getPrince() == car.getPrince() && Objects.equals(getId(), car.getId()) && Objects.equals(getBrand(), car.getBrand()) && Objects.equals(getModel(), car.getModel()) && Objects.equals(getColor(), car.getColor()) && Objects.equals(getRegistrationNumber(), car.getRegistrationNumber());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getbrand(), getModel(), getColor(), getRegistrationNumber(), getModelYear(), getPrince());
+        return Objects.hash(getId(), getBrand(), getModel(), getColor(), getRegistrationNumber(), getModelYear(), getPrince());
     }
 
     @Override
@@ -120,6 +120,7 @@ public class Car {
                 ", registrationNumber='" + registrationNumber + '\'' +
                 ", modelYear=" + modelYear +
                 ", prince=" + prince +
+                ", owner=" + owner +
                 '}';
     }
 }
